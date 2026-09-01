@@ -1,0 +1,28 @@
+[ 
+    { 
+        "invoke": "initLedger", 
+        "args": [] 
+    }, 
+    { 
+        "query": "queryAllCars", 
+        "args": [] 
+ 
+    }, 
+    { 
+        "invoke": "createCar", 
+        "args": ["CAR12", "Honda", "Civic", "black", "Dave"] 
+    }, 
+    { 
+        "query": "queryCar", 
+        "args": ["CAR12"] 
+    }, 
+    { 
+        "invoke": "changeCarOwner", 
+        "args": ["CAR12", "Alice"] 
+    }, 
+    { 
+    "query": "GetCarHistory", 
+    "args": ["CAR12"] 
+    } 
+ 
+] 

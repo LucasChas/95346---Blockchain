@@ -1,0 +1,22 @@
+# Dependencias de Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Configuraciones locales y temporales del depurador Fabric
+.fabric/
+wallet/
+wallets/
+gateway/
+gateways/
+*.tar.gz
+
+# Archivos del sistema y logs
+*.log
+.DS_Store
+Thumbs.db
+
+# Configuraciones de entorno
+.env
+.env.local

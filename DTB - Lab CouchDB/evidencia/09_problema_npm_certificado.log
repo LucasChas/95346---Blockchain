@@ -1,0 +1,51 @@
+$ ./network.sh deployCC -c inventario -ccn inventario -ccp "$CHAINCODE_PATH" -ccl typescript -ccep "AND('Org1MSP.peer','Org2MSP.peer')"
+Using docker and docker compose
+deploying chaincode on channel 'inventario'
+executing with the following
+- CHANNEL_NAME: inventario
+- CC_NAME: inventario
+- CC_SRC_PATH: /root/fabric-labs/inventario-ts
+- CC_SRC_LANGUAGE: typescript
+- CC_VERSION: 1.0
+- CC_SEQUENCE: auto
+- CC_END_POLICY: AND('Org1MSP.peer','Org2MSP.peer')
+- CC_COLL_CONFIG: NA
+- CC_INIT_FCN: NA
+- DELAY: 3
+- MAX_RETRY: 5
+- VERBOSE: false
+executing with the following
+- CC_NAME: inventario
+- CC_SRC_PATH: /root/fabric-labs/inventario-ts
+- CC_SRC_LANGUAGE: typescript
+- CC_VERSION: 1.0
+Compiling TypeScript code into JavaScript...
+~/fabric-labs/inventario-ts ~/fabric-labs/fabric-samples/test-network
+
+up to date, audited 83 packages in 512ms
+
+6 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+> inventario@1.0.0 build
+> tsc
+
+~/fabric-labs/fabric-samples/test-network
+Finished compiling TypeScript code into JavaScript
++ '[' false = true ']'
++ peer lifecycle chaincode package inventario.tar.gz --path /root/fabric-labs/inventario-ts --lang node --label inventario_1.0
++ res=0
+Chaincode is packaged
+Installing chaincode on peer0.org1...
+Using organization 1
++ peer lifecycle chaincode queryinstalled --output json
++ jq -r 'try (.installed_chaincodes[].package_id)'
++ grep '^inventario_1.0:fe4a268ca1a47cc5576907bf808d1ad2167b18bf950c8c65058cb7f6a6a9389f$'
++ test 1 -ne 0
++ peer lifecycle chaincode install inventario.tar.gz
++ res=1
+Error: chaincode install failed with status: 500 - error in simulation: transaction returned with failure: failed to marshal response: string field contains invalid UTF-8
+Chaincode installation on peer0.org1 has failed
+Deploying chaincode failed

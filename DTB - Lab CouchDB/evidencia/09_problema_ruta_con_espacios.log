@@ -1,0 +1,34 @@
+$ ./network.sh deployCC -c inventario -ccn inventario -ccp "$CHAINCODE_PATH" -ccl typescript -ccep "AND('Org1MSP.peer','Org2MSP.peer')"
+Using docker and docker compose
+deploying chaincode on channel 'inventario'
+executing with the following
+- CHANNEL_NAME: inventario
+- CC_NAME: inventario
+- CC_SRC_PATH: /home/user/95346---Blockchain/DTB
+- CC_SRC_LANGUAGE: -
+- CC_VERSION: Lab
+- CC_SEQUENCE: CouchDB/inventario-ts
+- CC_END_POLICY: 1.0
+- CC_COLL_CONFIG: auto
+- CC_INIT_FCN: typescript
+- DELAY: NA
+- MAX_RETRY: AND('Org1MSP.peer','Org2MSP.peer')
+- VERBOSE: NA
+executing with the following
+- CC_NAME: inventario
+- CC_SRC_PATH: /home/user/95346---Blockchain/DTB
+- CC_SRC_LANGUAGE: -
+- CC_VERSION: Lab
+Path to chaincode does not exist. Please provide different path.
+Error: failed to read chaincode package at 'inventario.tar.gz': open inventario.tar.gz: no such file or directory
+Installing chaincode on peer0.org1...
+Using organization 1
++ jq -r 'try (.installed_chaincodes[].package_id)'
++ peer lifecycle chaincode queryinstalled --output json
++ grep '^$'
++ test 1 -ne 0
++ peer lifecycle chaincode install inventario.tar.gz
++ res=1
+Error: failed to read chaincode package at 'inventario.tar.gz': open inventario.tar.gz: no such file or directory
+Chaincode installation on peer0.org1 has failed
+Deploying chaincode failed

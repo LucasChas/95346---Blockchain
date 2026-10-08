@@ -1,0 +1,337 @@
+$ ./network.sh up createChannel -c inventario -s couchdb
+Using docker and docker compose
+Creating channel 'inventario'.
+If network is not up, starting nodes with CLI timeout of '5' tries and CLI delay of '3' seconds and using database 'couchdb with crypto from 'cryptogen'
+Bringing up network
+LOCAL_VERSION=v2.5.16
+DOCKER_IMAGE_VERSION=v2.5.16
+/root/fabric-labs/fabric-samples/test-network/../bin/cryptogen
+Generating certificates using cryptogen tool
+Creating Org1 Identities
++ cryptogen generate --config=./organizations/cryptogen/crypto-config-org1.yaml --output=organizations
+org1.example.com
++ res=0
+Creating Org2 Identities
++ cryptogen generate --config=./organizations/cryptogen/crypto-config-org2.yaml --output=organizations
+org2.example.com
++ res=0
+Creating Orderer Org Identities
++ cryptogen generate --config=./organizations/cryptogen/crypto-config-orderer.yaml --output=organizations
++ res=0
+Generating CCP files for Org1 and Org2
+ Image couchdb:3.4.2 Pulling 
+ Image couchdb:3.4.2 Pulling 
+ 6e909acdb790 Pulling fs layer 0B
+ 3119e86acdcd Pulling fs layer 0B
+ 26667909256f Pulling fs layer 0B
+ fd5531d97129 Pulling fs layer 0B
+ 63676e159426 Pulling fs layer 0B
+ 66edba0cea7b Pulling fs layer 0B
+ 57b2b32a58bd Pulling fs layer 0B
+ 3e6e0cc1cf8d Pulling fs layer 0B
+ 397a9148e7b3 Pulling fs layer 0B
+ 2df4d3f8786c Pulling fs layer 0B
+ 7f0d848f4fa7 Pulling fs layer 0B
+ fd5531d97129 Pulling fs layer 0B
+ 3119e86acdcd Pulling fs layer 0B
+ 66edba0cea7b Pulling fs layer 0B
+ 3e6e0cc1cf8d Pulling fs layer 0B
+ 26667909256f Pulling fs layer 0B
+ 397a9148e7b3 Pulling fs layer 0B
+ 2df4d3f8786c Pulling fs layer 0B
+ 63676e159426 Pulling fs layer 0B
+ 7f0d848f4fa7 Pulling fs layer 0B
+ 57b2b32a58bd Pulling fs layer 0B
+ 6e909acdb790 Pulling fs layer 0B
+ db3f9a06d849 Downloading 31.78kB
+ 7f0d848f4fa7 Download complete 0B
+ db3f9a06d849 Download complete 0B
+ db3f9a06d849 Download complete 0B
+ 66edba0cea7b Download complete 0B
+ 66edba0cea7b Download complete 0B
+ 7f0d848f4fa7 Download complete 0B
+ 6e909acdb790 Downloading 3.146MB
+ 63676e159426 Downloading 1.049MB
+ 6e909acdb790 Downloading 3.146MB
+ 3119e86acdcd Downloading 1.182kB
+ 57b2b32a58bd Download complete 0B
+ 57b2b32a58bd Download complete 0B
+ 3e6e0cc1cf8d Download complete 0B
+ 3e6e0cc1cf8d Download complete 0B
+ 63676e159426 Downloading 1.049MB
+ 2df4d3f8786c Downloading 1.243kB
+ 6e909acdb790 Downloading 13.63MB
+ 63676e159426 Downloading 12.58MB
+ 6e909acdb790 Downloading 13.63MB
+ 3119e86acdcd Download complete 0B
+ 26667909256f Downloading 6.291MB
+ 3119e86acdcd Download complete 0B
+ fd5531d97129 Download complete 0B
+ 63676e159426 Downloading 12.58MB
+ 26667909256f Downloading 6.291MB
+ 397a9148e7b3 Download complete 0B
+ 2df4d3f8786c Downloading 1.243kB
+ fd5531d97129 Download complete 0B
+ 397a9148e7b3 Download complete 0B
+ 80c4f4db0657 Downloading 2.097MB
+ 2df4d3f8786c Download complete 0B
+ 2df4d3f8786c Download complete 0B
+ 63676e159426 Downloading 18.87MB
+ 6e909acdb790 Downloading 20.97MB
+ 6e909acdb790 Downloading 20.97MB
+ 26667909256f Download complete 0B
+ 63676e159426 Downloading 18.87MB
+ 80c4f4db0657 Downloading 2.097MB
+ 26667909256f Download complete 0B
+ 63676e159426 Downloading 28.31MB
+ 80c4f4db0657 Download complete 0B
+ 80c4f4db0657 Download complete 0B
+ 63676e159426 Downloading 28.31MB
+ 6e909acdb790 Downloading 28.2MB
+ 6e909acdb790 Downloading 28.2MB
+ 63676e159426 Downloading 39.85MB
+ 6e909acdb790 Download complete 0B
+ 63676e159426 Downloading 39.85MB
+ 6e909acdb790 Download complete 0B
+ 6e909acdb790 Extracting 1B
+ 6e909acdb790 Extracting 1B
+ 63676e159426 Downloading 48.23MB
+ 63676e159426 Downloading 48.23MB
+ 6e909acdb790 Extracting 1B
+ 6e909acdb790 Extracting 1B
+ 63676e159426 Downloading 58.72MB
+ 63676e159426 Downloading 58.72MB
+ 6e909acdb790 Extracting 1B
+ 6e909acdb790 Extracting 1B
+ 63676e159426 Downloading 67.11MB
+ 63676e159426 Downloading 67.11MB
+ 6e909acdb790 Extracting 1B
+ 6e909acdb790 Extracting 1B
+ 63676e159426 Downloading 76.55MB
+ 63676e159426 Downloading 76.55MB
+ 6e909acdb790 Extracting 1B
+ 6e909acdb790 Extracting 1B
+ 63676e159426 Downloading 84.93MB
+ 63676e159426 Downloading 84.93MB
+ 6e909acdb790 Extracting 1B
+ 6e909acdb790 Extracting 1B
+ 63676e159426 Downloading 94.37MB
+ 63676e159426 Downloading 94.37MB
+ 6e909acdb790 Extracting 1B
+ 6e909acdb790 Extracting 1B
+ 63676e159426 Downloading 96.66MB
+ 63676e159426 Downloading 96.66MB
+ 6e909acdb790 Extracting 1B
+ 6e909acdb790 Extracting 1B
+ 63676e159426 Download complete 0B
+ 63676e159426 Download complete 0B
+ 6e909acdb790 Extracting 1B
+ 6e909acdb790 Extracting 1B
+ 6e909acdb790 Extracting 1B
+ 6e909acdb790 Extracting 1B
+ 6e909acdb790 Extracting 1B
+ 6e909acdb790 Extracting 1B
+ 3119e86acdcd Pull complete 0B
+ 3119e86acdcd Pull complete 0B
+ 26667909256f Extracting 1B
+ 26667909256f Extracting 1B
+ 6e909acdb790 Pull complete 0B
+ 6e909acdb790 Pull complete 0B
+ 26667909256f Extracting 1B
+ 26667909256f Extracting 1B
+ 26667909256f Extracting 1B
+ 26667909256f Extracting 1B
+ 26667909256f Extracting 1B
+ 26667909256f Extracting 1B
+ 57b2b32a58bd Pull complete 0B
+ 3e6e0cc1cf8d Pull complete 0B
+ 57b2b32a58bd Pull complete 0B
+ 3e6e0cc1cf8d Pull complete 0B
+ 397a9148e7b3 Pull complete 0B
+ 397a9148e7b3 Pull complete 0B
+ 26667909256f Pull complete 0B
+ 26667909256f Pull complete 0B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 1B
+ 63676e159426 Extracting 2B
+ 63676e159426 Extracting 2B
+ 63676e159426 Extracting 2B
+ 63676e159426 Extracting 2B
+ 63676e159426 Extracting 2B
+ 63676e159426 Extracting 2B
+ 63676e159426 Extracting 2B
+ 63676e159426 Extracting 2B
+ 63676e159426 Extracting 2B
+ 63676e159426 Extracting 2B
+ 63676e159426 Extracting 2B
+ 63676e159426 Extracting 2B
+ 63676e159426 Extracting 2B
+ 63676e159426 Extracting 2B
+ 63676e159426 Extracting 2B
+ 63676e159426 Extracting 2B
+ 63676e159426 Extracting 2B
+ 63676e159426 Extracting 2B
+ 66edba0cea7b Pull complete 0B
+ 7f0d848f4fa7 Pull complete 0B
+ 66edba0cea7b Pull complete 0B
+ fd5531d97129 Pull complete 0B
+ 7f0d848f4fa7 Pull complete 0B
+ fd5531d97129 Pull complete 0B
+ 2df4d3f8786c Pull complete 0B
+ 2df4d3f8786c Pull complete 0B
+ 63676e159426 Pull complete 0B
+ 63676e159426 Pull complete 0B
+ Image couchdb:3.4.2 Pulled 
+ Image couchdb:3.4.2 Pulled 
+ Network fabric_test Creating 
+ Network fabric_test Created 
+ Volume compose_peer0.org1.example.com Creating 
+ Volume compose_peer0.org1.example.com Created 
+ Volume compose_peer0.org2.example.com Creating 
+ Volume compose_peer0.org2.example.com Created 
+ Volume compose_orderer.example.com Creating 
+ Volume compose_orderer.example.com Created 
+ Container couchdb0 Creating 
+ Container orderer.example.com Creating 
+ Container couchdb1 Creating 
+ Container couchdb1 Created 
+ Container peer0.org2.example.com Creating 
+ Container couchdb0 Created 
+ Container peer0.org1.example.com Creating 
+ Container orderer.example.com Created 
+ Container peer0.org2.example.com Created 
+ Container peer0.org1.example.com Created 
+ Container couchdb1 Starting 
+ Container orderer.example.com Starting 
+ Container couchdb0 Starting 
+ Container couchdb0 Started 
+ Container peer0.org1.example.com Starting 
+ Container couchdb1 Started 
+ Container peer0.org2.example.com Starting 
+ Container orderer.example.com Started 
+ Container peer0.org1.example.com Started 
+ Container peer0.org2.example.com Started 
+CONTAINER ID   IMAGE                               COMMAND                  CREATED        STATUS                  PORTS                                                                    NAMES
+f36b0113c472   hyperledger/fabric-peer:latest      "peer node start"        1 second ago   Up Less than a second   0.0.0.0:7051->7051/tcp, 0.0.0.0:9444->9444/tcp                           peer0.org1.example.com
+f1b1e41b014b   hyperledger/fabric-peer:latest      "peer node start"        1 second ago   Up Less than a second   0.0.0.0:9051->9051/tcp, 7051/tcp, 0.0.0.0:9445->9445/tcp                 peer0.org2.example.com
+ddc770e1b90d   couchdb:3.4.2                       "tini -- /docker-ent…"   1 second ago   Up Less than a second   4369/tcp, 9100/tcp, 0.0.0.0:5984->5984/tcp                               couchdb0
+ad69928ddc94   couchdb:3.4.2                       "tini -- /docker-ent…"   1 second ago   Up Less than a second   4369/tcp, 9100/tcp, 0.0.0.0:7984->5984/tcp                               couchdb1
+545a86b0cbcc   hyperledger/fabric-orderer:latest   "orderer"                1 second ago   Up Less than a second   0.0.0.0:7050->7050/tcp, 0.0.0.0:7053->7053/tcp, 0.0.0.0:9443->9443/tcp   orderer.example.com
+Using docker and docker compose
+Generating channel genesis block 'inventario.block'
+Using organization 1
+/root/fabric-labs/fabric-samples/test-network/../bin/configtxgen
++ '[' 0 -eq 1 ']'
++ configtxgen -profile ChannelUsingRaft -outputBlock ./channel-artifacts/inventario.block -channelID inventario
+2026-10-08 12:08:27.598 UTC 0001 INFO [common.tools.configtxgen] main -> Loading configuration
+2026-10-08 12:08:27.602 UTC 0002 INFO [common.tools.configtxgen.localconfig] completeInitialization -> orderer type: etcdraft
+2026-10-08 12:08:27.602 UTC 0003 INFO [common.tools.configtxgen.localconfig] completeInitialization -> Orderer.EtcdRaft.Options unset, setting to tick_interval:"500ms" election_tick:10 heartbeat_tick:1 max_inflight_blocks:5 snapshot_interval_size:16777216 
+2026-10-08 12:08:27.602 UTC 0004 INFO [common.tools.configtxgen.localconfig] Load -> Loaded configuration: /root/fabric-labs/fabric-samples/test-network/configtx/configtx.yaml
+2026-10-08 12:08:27.604 UTC 0005 INFO [common.tools.configtxgen] doOutputBlock -> Generating genesis block
+2026-10-08 12:08:27.604 UTC 0006 INFO [common.tools.configtxgen] doOutputBlock -> Creating application channel genesis block
+2026-10-08 12:08:27.606 UTC 0007 INFO [common.tools.configtxgen] doOutputBlock -> Writing genesis block
++ res=0
+Creating channel inventario
+Adding orderers
++ . scripts/orderer.sh inventario
++ '[' 0 -eq 1 ']'
++ res=0
+Status: 201
+{
+	"name": "inventario",
+	"url": "/participation/v1/channels/inventario",
+	"consensusRelation": "consenter",
+	"status": "active",
+	"height": 1
+}
+
+Channel 'inventario' created
+Joining org1 peer to the channel...
+Using organization 1
++ peer channel join -b ./channel-artifacts/inventario.block
++ res=0
+2026-10-08 12:08:33.737 UTC 0001 INFO [channelCmd] InitCmdFactory -> Endorser and orderer connections initialized
+2026-10-08 12:08:33.852 UTC 0002 INFO [channelCmd] executeJoin -> Successfully submitted proposal to join channel
+Joining org2 peer to the channel...
+Using organization 2
++ peer channel join -b ./channel-artifacts/inventario.block
++ res=0
+2026-10-08 12:08:36.928 UTC 0001 INFO [channelCmd] InitCmdFactory -> Endorser and orderer connections initialized
+2026-10-08 12:08:37.041 UTC 0002 INFO [channelCmd] executeJoin -> Successfully submitted proposal to join channel
+Setting anchor peer for org1...
+Using organization 1
+Fetching channel config for channel inventario
+Using organization 1
+Fetching the most recent configuration block for the channel
+++ peer channel fetch config /root/fabric-labs/fabric-samples/test-network/channel-artifacts/config_block.pb -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com -c inventario --tls --cafile /root/fabric-labs/fabric-samples/test-network/organizations/ordererOrganizations/example.com/tlsca/tlsca.example.com-cert.pem
+2026-10-08 12:08:37.108 UTC 0001 INFO [channelCmd] InitCmdFactory -> Endorser and orderer connections initialized
+2026-10-08 12:08:37.111 UTC 0002 INFO [cli.common] readBlock -> Received block: 0
+2026-10-08 12:08:37.111 UTC 0003 INFO [channelCmd] fetch -> Retrieving last config block: 0
+2026-10-08 12:08:37.112 UTC 0004 INFO [cli.common] readBlock -> Received block: 0
+Decoding config block to JSON and isolating config to /root/fabric-labs/fabric-samples/test-network/channel-artifacts/Org1MSPconfig.json
+++ configtxlator proto_decode --input /root/fabric-labs/fabric-samples/test-network/channel-artifacts/config_block.pb --type common.Block --output /root/fabric-labs/fabric-samples/test-network/channel-artifacts/config_block.json
+++ jq '.data.data[0].payload.data.config' /root/fabric-labs/fabric-samples/test-network/channel-artifacts/config_block.json
+++ res=0
+Generating anchor peer update transaction for Org1 on channel inventario
+++ jq '.channel_group.groups.Application.groups.Org1MSP.values += {"AnchorPeers":{"mod_policy": "Admins","value":{"anchor_peers": [{"host": "peer0.org1.example.com","port": 7051}]},"version": "0"}}' /root/fabric-labs/fabric-samples/test-network/channel-artifacts/Org1MSPconfig.json
+++ res=0
+++ configtxlator proto_encode --input /root/fabric-labs/fabric-samples/test-network/channel-artifacts/Org1MSPconfig.json --type common.Config --output /root/fabric-labs/fabric-samples/test-network/channel-artifacts/original_config.pb
+++ configtxlator proto_encode --input /root/fabric-labs/fabric-samples/test-network/channel-artifacts/Org1MSPmodified_config.json --type common.Config --output /root/fabric-labs/fabric-samples/test-network/channel-artifacts/modified_config.pb
+++ configtxlator compute_update --channel_id inventario --original /root/fabric-labs/fabric-samples/test-network/channel-artifacts/original_config.pb --updated /root/fabric-labs/fabric-samples/test-network/channel-artifacts/modified_config.pb --output /root/fabric-labs/fabric-samples/test-network/channel-artifacts/config_update.pb
+++ configtxlator proto_decode --input /root/fabric-labs/fabric-samples/test-network/channel-artifacts/config_update.pb --type common.ConfigUpdate --output /root/fabric-labs/fabric-samples/test-network/channel-artifacts/config_update.json
+++ jq .
++++ cat /root/fabric-labs/fabric-samples/test-network/channel-artifacts/config_update.json
+++ echo '{"payload":{"header":{"channel_header":{"channel_id":"inventario", "type":2}},"data":{"config_update":{' '"channel_id":' '"inventario",' '"isolated_data":' '{},' '"read_set":' '{' '"groups":' '{' '"Application":' '{' '"groups":' '{' '"Org1MSP":' '{' '"groups":' '{},' '"mod_policy":' '"",' '"policies":' '{' '"Admins":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '},' '"Endorsement":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '},' '"Readers":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '},' '"Writers":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '}' '},' '"values":' '{' '"MSP":' '{' '"mod_policy":' '"",' '"value":' null, '"version":' '"0"' '}' '},' '"version":' '"0"' '}' '},' '"mod_policy":' '"",' '"policies":' '{},' '"values":' '{},' '"version":' '"0"' '}' '},' '"mod_policy":' '"",' '"policies":' '{},' '"values":' '{},' '"version":' '"0"' '},' '"write_set":' '{' '"groups":' '{' '"Application":' '{' '"groups":' '{' '"Org1MSP":' '{' '"groups":' '{},' '"mod_policy":' '"Admins",' '"policies":' '{' '"Admins":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '},' '"Endorsement":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '},' '"Readers":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '},' '"Writers":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '}' '},' '"values":' '{' '"AnchorPeers":' '{' '"mod_policy":' '"Admins",' '"value":' '{' '"anchor_peers":' '[' '{' '"host":' '"peer0.org1.example.com",' '"port":' 7051 '}' ']' '},' '"version":' '"0"' '},' '"MSP":' '{' '"mod_policy":' '"",' '"value":' null, '"version":' '"0"' '}' '},' '"version":' '"1"' '}' '},' '"mod_policy":' '"",' '"policies":' '{},' '"values":' '{},' '"version":' '"0"' '}' '},' '"mod_policy":' '"",' '"policies":' '{},' '"values":' '{},' '"version":' '"0"' '}' '}}}}'
+++ configtxlator proto_encode --input /root/fabric-labs/fabric-samples/test-network/channel-artifacts/config_update_in_envelope.json --type common.Envelope --output /root/fabric-labs/fabric-samples/test-network/channel-artifacts/Org1MSPanchors.tx
+2026-10-08 12:08:37.272 UTC 0001 INFO [channelCmd] InitCmdFactory -> Endorser and orderer connections initialized
+2026-10-08 12:08:37.283 UTC 0002 INFO [channelCmd] update -> Successfully submitted channel update
+Anchor peer set for org 'Org1MSP' on channel 'inventario'
+Setting anchor peer for org2...
+Using organization 2
+Fetching channel config for channel inventario
+Using organization 2
+Fetching the most recent configuration block for the channel
+++ peer channel fetch config /root/fabric-labs/fabric-samples/test-network/channel-artifacts/config_block.pb -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com -c inventario --tls --cafile /root/fabric-labs/fabric-samples/test-network/organizations/ordererOrganizations/example.com/tlsca/tlsca.example.com-cert.pem
+2026-10-08 12:08:37.353 UTC 0001 INFO [channelCmd] InitCmdFactory -> Endorser and orderer connections initialized
+2026-10-08 12:08:37.356 UTC 0002 INFO [cli.common] readBlock -> Received block: 1
+2026-10-08 12:08:37.356 UTC 0003 INFO [channelCmd] fetch -> Retrieving last config block: 1
+2026-10-08 12:08:37.358 UTC 0004 INFO [cli.common] readBlock -> Received block: 1
+Decoding config block to JSON and isolating config to /root/fabric-labs/fabric-samples/test-network/channel-artifacts/Org2MSPconfig.json
+++ configtxlator proto_decode --input /root/fabric-labs/fabric-samples/test-network/channel-artifacts/config_block.pb --type common.Block --output /root/fabric-labs/fabric-samples/test-network/channel-artifacts/config_block.json
+++ jq '.data.data[0].payload.data.config' /root/fabric-labs/fabric-samples/test-network/channel-artifacts/config_block.json
+++ res=0
+Generating anchor peer update transaction for Org2 on channel inventario
+++ jq '.channel_group.groups.Application.groups.Org2MSP.values += {"AnchorPeers":{"mod_policy": "Admins","value":{"anchor_peers": [{"host": "peer0.org2.example.com","port": 9051}]},"version": "0"}}' /root/fabric-labs/fabric-samples/test-network/channel-artifacts/Org2MSPconfig.json
+++ res=0
+++ configtxlator proto_encode --input /root/fabric-labs/fabric-samples/test-network/channel-artifacts/Org2MSPconfig.json --type common.Config --output /root/fabric-labs/fabric-samples/test-network/channel-artifacts/original_config.pb
+++ configtxlator proto_encode --input /root/fabric-labs/fabric-samples/test-network/channel-artifacts/Org2MSPmodified_config.json --type common.Config --output /root/fabric-labs/fabric-samples/test-network/channel-artifacts/modified_config.pb
+++ configtxlator compute_update --channel_id inventario --original /root/fabric-labs/fabric-samples/test-network/channel-artifacts/original_config.pb --updated /root/fabric-labs/fabric-samples/test-network/channel-artifacts/modified_config.pb --output /root/fabric-labs/fabric-samples/test-network/channel-artifacts/config_update.pb
+++ configtxlator proto_decode --input /root/fabric-labs/fabric-samples/test-network/channel-artifacts/config_update.pb --type common.ConfigUpdate --output /root/fabric-labs/fabric-samples/test-network/channel-artifacts/config_update.json
+++ jq .
++++ cat /root/fabric-labs/fabric-samples/test-network/channel-artifacts/config_update.json
+++ echo '{"payload":{"header":{"channel_header":{"channel_id":"inventario", "type":2}},"data":{"config_update":{' '"channel_id":' '"inventario",' '"isolated_data":' '{},' '"read_set":' '{' '"groups":' '{' '"Application":' '{' '"groups":' '{' '"Org2MSP":' '{' '"groups":' '{},' '"mod_policy":' '"",' '"policies":' '{' '"Admins":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '},' '"Endorsement":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '},' '"Readers":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '},' '"Writers":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '}' '},' '"values":' '{' '"MSP":' '{' '"mod_policy":' '"",' '"value":' null, '"version":' '"0"' '}' '},' '"version":' '"0"' '}' '},' '"mod_policy":' '"",' '"policies":' '{},' '"values":' '{},' '"version":' '"0"' '}' '},' '"mod_policy":' '"",' '"policies":' '{},' '"values":' '{},' '"version":' '"0"' '},' '"write_set":' '{' '"groups":' '{' '"Application":' '{' '"groups":' '{' '"Org2MSP":' '{' '"groups":' '{},' '"mod_policy":' '"Admins",' '"policies":' '{' '"Admins":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '},' '"Endorsement":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '},' '"Readers":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '},' '"Writers":' '{' '"mod_policy":' '"",' '"policy":' null, '"version":' '"0"' '}' '},' '"values":' '{' '"AnchorPeers":' '{' '"mod_policy":' '"Admins",' '"value":' '{' '"anchor_peers":' '[' '{' '"host":' '"peer0.org2.example.com",' '"port":' 9051 '}' ']' '},' '"version":' '"0"' '},' '"MSP":' '{' '"mod_policy":' '"",' '"value":' null, '"version":' '"0"' '}' '},' '"version":' '"1"' '}' '},' '"mod_policy":' '"",' '"policies":' '{},' '"values":' '{},' '"version":' '"0"' '}' '},' '"mod_policy":' '"",' '"policies":' '{},' '"values":' '{},' '"version":' '"0"' '}' '}}}}'
+++ configtxlator proto_encode --input /root/fabric-labs/fabric-samples/test-network/channel-artifacts/config_update_in_envelope.json --type common.Envelope --output /root/fabric-labs/fabric-samples/test-network/channel-artifacts/Org2MSPanchors.tx
+2026-10-08 12:08:37.545 UTC 0001 INFO [channelCmd] InitCmdFactory -> Endorser and orderer connections initialized
+2026-10-08 12:08:37.561 UTC 0002 INFO [channelCmd] update -> Successfully submitted channel update
+Anchor peer set for org 'Org2MSP' on channel 'inventario'
+Channel 'inventario' joined

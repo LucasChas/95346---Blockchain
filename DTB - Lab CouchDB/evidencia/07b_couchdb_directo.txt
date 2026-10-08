@@ -1,0 +1,5 @@
+$ curl -s http://admin:adminpw@localhost:5984/_all_dbs   # couchdb0 (peer0.org1)
+["_replicator","_users","fabric__internal","inventario_","inventario__lifecycle","inventario__lifecycle$$h_implicit_org_$org1$m$s$p","inventario__lifecycle$$h_implicit_org_$org2$m$s$p","inventario__lifecycle$$p_implicit_org_$org1$m$s$p","inventario_inventario","inventario_lscc"]
+
+$ curl -s http://admin:adminpw@localhost:7984/inventario_inventario/EQ-02   # couchdb1 (peer0.org2)
+{"_id":"EQ-02","_rev":"1-b6838bca7d667ee6ffcfbab772ec486e","custodio":"Org1","descripcion":"Osciloscopio","docType":"equipo","estado":"disponible","id":"EQ-02","solicitante":"","ultimaAccionPor":"Org1MSP","ultimaActualizacion":"2026-10-08T12:13:33.239Z","~version":"CgMBBgA="}

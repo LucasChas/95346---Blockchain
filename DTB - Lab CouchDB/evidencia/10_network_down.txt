@@ -1,0 +1,11 @@
+$ ./network.sh down
+Error response from daemon: get docker_peer0.org1.example.com: no such volume
+Error response from daemon: get docker_peer0.org2.example.com: no such volume
+Removing remaining containers
+Removing generated chaincode docker images
+Untagged: dev-peer0.org2.example.com-inventario_1.0-fe4a268ca1a47cc5576907bf808d1ad2167b18bf950c8c65058cb7f6a6a9389f-c896f32ee53466428a2dfa2a157e18bcc66bb0c6296384efc0d3da89488165f2:latest
+Deleted: sha256:13f192fb5df25e3cf83fbaf28ecac3dda03ca7019958d5545e17b06bc71a4866
+Untagged: dev-peer0.org1.example.com-inventario_1.0-fe4a268ca1a47cc5576907bf808d1ad2167b18bf950c8c65058cb7f6a6a9389f-2e8135788f005c1b928b9506f4c0ed26de73f9c4dda5bc4d9ac350d2213060d9:latest
+Deleted: sha256:7c773c2e3003a5419efa40e01c087b32c131aa7452b904fc265995451a32bb7f
+$ docker ps --format "{{.Names}}" | grep -E "peer|orderer|couchdb|inventario" || echo "red detenida OK"
+red detenida OK

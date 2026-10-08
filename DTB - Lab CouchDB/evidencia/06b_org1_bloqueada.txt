@@ -1,0 +1,9 @@
+$ usar_org 1
+Ahora sos Org1 (custodio)
+# Intento 1: re-solicitar (error por ESTADO)
+$ invocar '{"function":"SolicitarPrestamo","Args":["EQ-01"]}'
+Error: endorsement failure during invoke. response: status:500 message:"no se puede solicitar EQ-01: estado actual \"solicitado\". El turno es de Org2MSP" 
+
+# Intento 2: aprobar su propia solicitud (error por ROL)
+$ invocar '{"function":"AprobarPrestamo","Args":["EQ-01"]}'
+Error: endorsement failure during invoke. response: status:500 message:"solo la autoridad (Org2MSP) puede aprobar; cliente recibido: Org1MSP" 

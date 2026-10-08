@@ -1,0 +1,7 @@
+$ docker ps --format "table {{.Names}}\t{{.Status}}"
+NAMES                    STATUS
+peer0.org1.example.com   Up 10 seconds
+peer0.org2.example.com   Up 10 seconds
+couchdb0                 Up 10 seconds
+couchdb1                 Up 10 seconds
+orderer.example.com      Up 10 seconds

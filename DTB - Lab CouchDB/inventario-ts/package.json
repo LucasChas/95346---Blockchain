@@ -1,0 +1,19 @@
+{
+  "name": "inventario",
+  "version": "1.0.0",
+  "description": "Chaincode de inventario con CouchDB — DTB 2026 Clase 07",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "fabric-chaincode-node start",
+    "build": "tsc",
+    "test": "echo 'sin tests' && exit 0"
+  },
+  "dependencies": {
+    "fabric-contract-api": "^2.2.3",
+    "fabric-shim": "^2.2.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "@types/node": "^20.0.0"
+  }
+}

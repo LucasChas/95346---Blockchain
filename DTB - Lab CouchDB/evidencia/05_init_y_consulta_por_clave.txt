@@ -1,0 +1,6 @@
+$ usar_org 1
+Ahora sos Org1 (custodio)
+$ invocar '{"function":"InitLedger","Args":[]}'
+2026-10-08 12:13:33.262 UTC 0001 INFO [chaincodeCmd] chaincodeInvokeOrQuery -> Chaincode invoke successful. result: status:200 
+$ peer chaincode query -C inventario -n inventario -c '{"Args":["ReadEquipo","EQ-01"]}'
+{"custodio":"Org1","descripcion":"Servidor de pruebas","docType":"equipo","estado":"disponible","id":"EQ-01","solicitante":"","ultimaAccionPor":"Org1MSP","ultimaActualizacion":"2026-10-08T12:13:33.239Z"}

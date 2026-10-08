@@ -1,0 +1,7 @@
+$ usar_org 1
+Ahora sos Org1 (custodio)
+$ invocar '{"function":"SolicitarPrestamo","Args":["EQ-01"]}'
+2026-10-08 12:13:36.460 UTC 0001 INFO [chaincodeCmd] chaincodeInvokeOrQuery -> Chaincode invoke successful. result: status:200 
+$ sleep 3
+$ peer chaincode query -C inventario -n inventario -c '{"Args":["ReadEquipo","EQ-01"]}'
+{"custodio":"Org1","descripcion":"Servidor de pruebas","docType":"equipo","estado":"solicitado","id":"EQ-01","solicitante":"Org2","ultimaAccionPor":"Org1MSP","ultimaActualizacion":"2026-10-08T12:13:36.430Z"}

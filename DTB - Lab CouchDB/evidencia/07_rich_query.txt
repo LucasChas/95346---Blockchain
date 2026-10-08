@@ -1,0 +1,16 @@
+# ANTES de la nueva solicitud
+$ peer chaincode query -C inventario -n inventario -c '{"Args":["EquiposPorEstado","disponible"]}'
+[{"custodio":"Org1","descripcion":"Servidor de pruebas","docType":"equipo","estado":"disponible","id":"EQ-01","solicitante":"","ultimaAccionPor":"Org2MSP","ultimaActualizacion":"2026-10-08T12:13:42.964Z"},{"custodio":"Org1","descripcion":"Osciloscopio","docType":"equipo","estado":"disponible","id":"EQ-02","solicitante":"","ultimaAccionPor":"Org1MSP","ultimaActualizacion":"2026-10-08T12:13:33.239Z"},{"custodio":"Org1","descripcion":"Impresora 3D","docType":"equipo","estado":"disponible","id":"EQ-03","solicitante":"","ultimaAccionPor":"Org1MSP","ultimaActualizacion":"2026-10-08T12:13:33.239Z"}]
+
+$ usar_org 1
+Ahora sos Org1 (custodio)
+$ invocar '{"function":"SolicitarPrestamo","Args":["EQ-01"]}'
+2026-10-08 12:13:46.324 UTC 0001 INFO [chaincodeCmd] chaincodeInvokeOrQuery -> Chaincode invoke successful. result: status:200 
+$ sleep 3
+# DESPUÉS de la nueva solicitud
+$ peer chaincode query -C inventario -n inventario -c '{"Args":["EquiposPorEstado","disponible"]}'
+[{"custodio":"Org1","descripcion":"Osciloscopio","docType":"equipo","estado":"disponible","id":"EQ-02","solicitante":"","ultimaAccionPor":"Org1MSP","ultimaActualizacion":"2026-10-08T12:13:33.239Z"},{"custodio":"Org1","descripcion":"Impresora 3D","docType":"equipo","estado":"disponible","id":"EQ-03","solicitante":"","ultimaAccionPor":"Org1MSP","ultimaActualizacion":"2026-10-08T12:13:33.239Z"}]
+
+# (extra) equipos en estado solicitado
+$ peer chaincode query -C inventario -n inventario -c '{"Args":["EquiposPorEstado","solicitado"]}'
+[{"custodio":"Org1","descripcion":"Servidor de pruebas","docType":"equipo","estado":"solicitado","id":"EQ-01","solicitante":"Org2","ultimaAccionPor":"Org1MSP","ultimaActualizacion":"2026-10-08T12:13:46.310Z"}]
